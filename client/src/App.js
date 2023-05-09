@@ -1,36 +1,27 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Home from './components/Home';
 import NotFound from './components/NotFound';
 import NavBar from './components/NavBar';
 import Login from './components/Login';
+import { UserProvider } from './context/user';
 
 function App() {
+  
 
-  const [user, setUser] = useState('')
-
-  /*
-  useEffect = () => {
-    fetch('/auth')
-    .then(res => {
-      if (res.ok) {
-        res.json().then(currentUser => setUser(currentUser))
-      }
-    })
-  }
-  */
 
   return (
+    <UserProvider>
     <Router>
       <NavBar/>
       <Routes>
-        <Route path='/' element={<Home user={user} />}/>
+        <Route path='/' element={<Home />}/>
         <Route path='*' element={<NotFound/>} />
-        <Route path='/login' element={<Login user={user}/>} /> 
+        <Route path='/login' element={<Login />} /> 
       </Routes>
     </Router>
-    
+    </UserProvider>
   );
 }
 
