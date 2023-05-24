@@ -33,8 +33,6 @@ const Login = () => {
         })
     }
 
-
-    console.log(username, password);
     return(
         <Box
             component="form"
