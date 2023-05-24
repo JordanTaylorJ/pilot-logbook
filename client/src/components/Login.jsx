@@ -31,7 +31,6 @@ const Login = () => {
                 r.json().then(r => setErrors(r.error))
             }
         })
-        console.log('button was pressed')
     }
 
 
