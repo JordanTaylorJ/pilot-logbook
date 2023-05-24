@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Home = ({user}) => {
+const Home = () => {
 
     return(
         <h1>ET phone home</h1>

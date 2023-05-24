@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   get '/auth', to: 'users#show'
   get '/login', to: 'sessions#create'
 
+  post '/signup', to: 'users#create'   
+
   
 end
