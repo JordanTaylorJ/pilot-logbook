@@ -1,15 +1,36 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import { UserContext } from '../context/user';
 
 const Login = () => {
 
+    const {setUser} = useContext(UserContext);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [errors, setErrors] = useState([]); 
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        fetch('/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username,
+                password 
+            })
+        })
+        .then((r) => {
+            if (r.ok) {
+                r.json().then(r => setUser(r))
+                setErrors([])
+            } else {
+                r.json().then(r => setErrors(r.error))
+            }
+        })
         console.log('button was pressed')
     }
 
@@ -47,6 +68,7 @@ const Login = () => {
         >
             Sign In
         </Button>
+        <h1>{errors}</h1>
         </Box>
     )
 }
