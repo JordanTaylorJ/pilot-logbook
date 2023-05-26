@@ -6,7 +6,9 @@ import NotFound from './components/NotFound';
 import NavBar from './components/NavBar';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import Aircraft from './components/Aircraft';
 import { UserProvider } from './context/user';
+
 
 
 function App() {
@@ -22,6 +24,7 @@ function App() {
         <Route path='*' element={<NotFound/>} />
         <Route path='/login' element={<Login />} /> 
         <Route path='/signup' element={<Signup/>} /> 
+        <Route path='aircraft' element={<Aircraft/>} /> 
       </Routes>
     </Router>
     </UserProvider>
