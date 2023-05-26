@@ -7,3 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 u1 = User.create(username: "Lucy", password: "123")
+
+a1 = Aircraft.create(ident: "N4741N", aircraft_type:"C172")
+
+l1 = Log.create(user_id: u1.id, aircraft_id: a1.id, date: "05/26/2023", take_offs: 1, landings: 1, single_engine_land: 0.9, dual_received: 0.9, total_duration: 0.9)
+

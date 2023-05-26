@@ -15,7 +15,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_26_194218) do
   enable_extension "plpgsql"
 
   create_table "aircrafts", force: :cascade do |t|
-    t.string "type"
+    t.string "aircraft_type"
     t.string "ident"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
