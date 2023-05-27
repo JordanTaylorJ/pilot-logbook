@@ -1,3 +1,3 @@
 class AircraftSerializer < ActiveModel::Serializer
-  attributes :id, :type, :ident
+  attributes :id, :ident, :aircraft_type
 end
