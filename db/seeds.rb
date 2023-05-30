@@ -8,7 +8,9 @@
 
 u1 = User.create(username: "Lucy", password: "123")
 
-a1 = Aircraft.create(ident: "N4741N", aircraft_type:"C172")
+a1 = Aircraft.create(ident: "N4741N", aircraft_type: "C172")
+a2 = Aircraft.create(ident: "N1B5TS", aircraft_type: "C172")
+a3 = Aircraft.create(ident: "NG45TM", aircraft_type: "C210")
 
 l1 = Log.create(user_id: u1.id, aircraft_id: a1.id, date: "05/26/2023", take_offs: 1, landings: 1, single_engine_land: 0.9, dual_received: 0.9, total_duration: 0.9)
-
+l1 = Log.create(user_id: u1.id, aircraft_id: a1.id, date: "05/29/2023", take_offs: 3, landings: 3, single_engine_land: 1.4, dual_received: 1.4, total_duration: 1.4)

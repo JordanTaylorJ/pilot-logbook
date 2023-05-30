@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Aircraft = () => {
+const Aircraft = ({aircraft}) => {
 
     return(
-        <h1>a list of aircraft will be here, with an add new button</h1>
+        <h1>list </h1>
     )
 }
 
