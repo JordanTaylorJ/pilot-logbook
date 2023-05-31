@@ -11,8 +11,6 @@ const Signup = () => {
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState([]);
 
-    console.log(username, password); 
-
     const handleSubmit = (e) => {
         e.preventDefault();
         fetch('/signup', {

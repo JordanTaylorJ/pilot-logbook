@@ -21,8 +21,6 @@ function App() {
     .then(r => setAircraft(r))
   }, [])
 
-  console.log(aircraft)
-
   return (
     <UserProvider>
     <Router>
