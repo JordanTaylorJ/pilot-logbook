@@ -36,6 +36,12 @@ const NavBar = () => {
             </IconButton>
             <Button 
                 color="inherit"
+                component={Link} to='/aircraft'
+            >
+                Aircraft
+            </Button>
+            <Button 
+                color="inherit"
                 component={Link} to='/login'
             >
                 Login
