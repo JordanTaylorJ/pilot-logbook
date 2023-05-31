@@ -5,8 +5,6 @@ const Home = () => {
 
     const {user} = useContext(UserContext);
 
-    console.log(user, 'from home');
-
     if (!user){
         return(
             <h1>ET phone home </h1>
