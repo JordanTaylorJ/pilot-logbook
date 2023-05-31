@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
     def show
         current_user = User.find(session[:user_id])
-        render json: current_user, status: :ok
+        render json: current_user, include: 'logs.aircraft', status: :ok
     end 
 
     def create 
