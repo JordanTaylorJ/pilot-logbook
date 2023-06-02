@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { UserContext } from '../context/user';
+import { Link } from "react-router-dom";
 
 const Login = () => {
 
@@ -66,6 +67,10 @@ const Login = () => {
             Sign In
         </Button>
         <h1>{errors}</h1>
+        <h2>Need to create an account?</h2>
+        <Link to={`/signup`} rel="noreferror">
+            Sign Up
+        </Link>
         </Box>
     )
 }
