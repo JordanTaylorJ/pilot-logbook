@@ -7,10 +7,11 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import { UserContext } from '../context/user';
+import { Container } from '@mui/material';
 
 const NavBar = () => { 
 
-    const {setUser} = useContext(UserContext); 
+    const {user, setUser} = useContext(UserContext); 
 
     const handleLogout = () => {
         fetch('/logout', {
@@ -19,8 +20,8 @@ const NavBar = () => {
     }
 
     return(
-        <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
+        <AppBar position="sticky">
+        <Container maxWidth="xl">
             <Toolbar>
             <IconButton
                 size="large"
@@ -34,34 +35,41 @@ const NavBar = () => {
                 Logbook
             </Typography>
             </IconButton>
+
+
             <Button 
                 color="inherit"
                 component={Link} to='/aircraft'
             >
                 Aircraft
             </Button>
-            <Button 
-                color="inherit"
-                component={Link} to='/login'
-            >
-                Login
-            </Button>
-            <Button 
-                color="inherit"
-                component={Link} to='/signup'
-            >
-                Signup
-            </Button>
-            <Button 
-                color="inherit"
-                onClick={(e) => handleLogout(e)}
-            >
-                Logout
-            </Button>
+            {!user ? 
+                <>
+                <Button 
+                    color="inherit"
+                    component={Link} to='/login'
+                >
+                    Login
+                </Button>
+                <Button 
+                    color="inherit"
+                    component={Link} to='/signup'
+                >
+                    Signup
+                </Button>
+                </>
+            :
+                <Button
+                    color="inherit"
+                    onClick={(e) => handleLogout(e)}
+                >
+                    Logout
+                </Button>
+            }
             </Toolbar>
+            </Container>
         </AppBar>
-        </Box>
-    )
+    ); 
 }
 
 export default NavBar;

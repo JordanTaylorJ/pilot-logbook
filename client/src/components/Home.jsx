@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import { UserContext } from '../context/user';
+import Login from './Login';
 
 const Home = () => {
 
@@ -7,12 +8,17 @@ const Home = () => {
 
     if (!user){
         return(
-            <h1>ET phone home </h1>
+            <>
+            <h1>Welcome</h1>
+            <Login/>
+            </>
         )
     }
     else {
         return( 
+            <>
             <h1>{user.username} is here</h1>
+            </>
         )
     }
 }
