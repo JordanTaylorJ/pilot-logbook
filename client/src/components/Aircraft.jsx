@@ -11,7 +11,7 @@ const Aircraft = ({aircraft}) => {
     if (aircraft.length > 0)
     return(
         <>
-        <h1>list </h1>
+        <NewAircraft/>
         {aircraft.map(air => {
             return(
             <Card sx={{ minWidth: 275 }} key={air.id}>
@@ -35,7 +35,7 @@ const Aircraft = ({aircraft}) => {
             </Card>
             )
         })}
-        <NewAircraft/>
+        
     </>
     )
 }
