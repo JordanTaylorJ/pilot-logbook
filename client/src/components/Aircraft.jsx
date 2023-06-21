@@ -4,6 +4,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import NewAircraft from './NewAircraft';
 
 const Aircraft = ({aircraft}) => {
 
@@ -34,6 +35,7 @@ const Aircraft = ({aircraft}) => {
             </Card>
             )
         })}
+        <NewAircraft/>
     </>
     )
 }
